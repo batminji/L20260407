@@ -1,4 +1,4 @@
-ï»¿// Fill out your copyright notice in the Description page of Project Settings.
+// Fill out your copyright notice in the Description page of Project Settings.
 
 
 #include "W_Main.h"
@@ -73,7 +73,7 @@ void UW_Main::UpdateSelectLog(FName RowName)
 	if (ItemData)
 	{
 		FText FormatText = FText::Format(
-			FText::FromString(TEXT("[ {0}ì„(ë¥¼) ì„ íƒí•˜ì…¨ìŠµë‹ˆë‹¤! ]")),
+			NSLOCTEXT("W_Main", "SelectLog", "[{0}À»(¸¦) ¼±ÅÃÇÏ¼Ì½À´Ï´Ù!]"),
 			ItemData->Name
 		);
 		TXT_SelectLog->SetText(FormatText);
