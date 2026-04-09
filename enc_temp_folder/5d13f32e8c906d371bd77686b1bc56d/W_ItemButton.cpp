@@ -51,19 +51,9 @@ void UW_ItemButton::UpdateItemWidget(FName InRowName)
     }
 }
 
-void UW_ItemButton::SetButtonDisabled()
-{
-    if (BTN_Item)
-    {
-        BTN_Item->SetIsEnabled(false);
-    }
-}
-
 void UW_ItemButton::OnItemButtonClicked()
 {
     bIsClicked = true;
-
-    SetButtonClicked();
 
     if (OnClickedItem.IsBound())
     {
