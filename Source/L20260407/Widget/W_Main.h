@@ -54,6 +54,9 @@ protected:
 	void ShuffleRowNames();
 	void AddRandomItem();
 
+	void UpdateSelectLog(FName RowName);
+	void UpdateButtonEnabled();
+
 	UFUNCTION()
 	void OnClickedItem(FName RowName);
 };

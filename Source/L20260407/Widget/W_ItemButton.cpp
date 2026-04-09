@@ -2,6 +2,7 @@
 
 
 #include "W_ItemButton.h"
+#include "L20260407/Data/S_Item.h"
 #include "Components/Button.h"
 #include "Components/Image.h"
 #include "Components/TextBlock.h"

@@ -7,6 +7,7 @@
 #include "Components/Button.h"
 #include "Algo/RandomShuffle.h"
 #include "W_ItemButton.h"
+#include "L20260407/Data/S_Item.h"
 
 void UW_Main::NativeConstruct()
 {
@@ -23,6 +24,8 @@ void UW_Main::NativeConstruct()
 	{
 		RowNames = DT_Item->GetRowNames();
 	}
+
+	RefreshItems();
 }
 
 void UW_Main::RefreshItems()
@@ -64,7 +67,39 @@ void UW_Main::AddRandomItem()
 	}
 }
 
+void UW_Main::UpdateSelectLog(FName RowName)
+{
+	FS_Item* ItemData = DT_Item->FindRow<FS_Item>(RowName, TEXT("UpdateSelectLog"));
+	if (ItemData)
+	{
+		FText FormatText = FText::Format(
+			NSLOCTEXT("W_Main", "SelectLog", "[{0}을(를) 선택하셨습니다!]"),
+			ItemData->Name
+		);
+		TXT_SelectLog->SetText(FormatText);
+		TXT_SelectLog->SetVisibility(ESlateVisibility::Visible);
+	}
+}
+
+void UW_Main::UpdateButtonEnabled()
+{
+	TArray<UWidget*> Children = WrapBox->GetAllChildren();
+
+	for (UWidget* Child : Children)
+	{
+		UW_ItemButton* ItemButton = Cast<UW_ItemButton>(Child);
+		if (IsValid(ItemButton))
+		{
+			if (ItemButton->GetIsClicked())
+			{
+				ItemButton->SetButtonDisabled();
+			}
+		}		
+	}
+}
+
 void UW_Main::OnClickedItem(FName RowName)
 {
-
+	UpdateSelectLog(RowName);
+	UpdateButtonEnabled();
 }

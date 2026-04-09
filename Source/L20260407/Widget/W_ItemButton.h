@@ -4,7 +4,6 @@
 
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
-#include "L20260407/Data/S_Item.h"
 #include "W_ItemButton.generated.h"
 
 class UButton;
@@ -34,6 +33,11 @@ public:
 
     UFUNCTION(BlueprintImplementableEvent, Category = "Button")
     void SetButtonClicked();
+
+    bool GetIsClicked() const
+    {
+        return bIsClicked;
+    }
 
 protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
