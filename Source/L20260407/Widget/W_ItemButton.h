@@ -32,7 +32,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetButtonDisabled();
 
-    UFUNCTION(BlueprintImplementable, Category = "Button")
+    UFUNCTION(BlueprintImplementableEvent, Category = "Button")
     void SetButtonClicked();
 
 protected:
