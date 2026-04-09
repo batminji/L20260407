@@ -23,10 +23,9 @@ class L20260407_API UW_Main : public UUserWidget
 public:
 	virtual void NativeConstruct() override;
 
-	UFUNCTION(BlueprintCallable)
+protected:
 	void RefreshItems();
 
-protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	UDataTable* DT_Item;
 

@@ -25,13 +25,11 @@ public:
     UPROPERTY(BlueprintAssignable)
     FOnClickedItem OnClickedItem;
 
-    UFUNCTION(BlueprintCallable)
     void UpdateItemWidget(FName InRowName);
 
-    UFUNCTION(BlueprintCallable)
     void SetButtonDisabled();
 
-    UFUNCTION(BlueprintImplementableEvent, Category = "Button")
+    UFUNCTION(BlueprintImplementableEvent)
     void SetButtonClicked();
 
     bool GetIsClicked() const
