@@ -31,6 +31,8 @@ void UW_Main::RefreshItems()
 
 	ShuffleRowNames();
 	AddRandomItem();
+
+	TXT_SelectLog->SetVisibility(ESlateVisibility::Hidden);
 }
 
 void UW_Main::OnRefreshButtonClicked()
