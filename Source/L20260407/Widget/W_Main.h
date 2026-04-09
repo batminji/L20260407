@@ -13,6 +13,7 @@
 class UWrapBox;
 class UTextBlock;
 class UButton;
+class UW_ItemButton;
 
 UCLASS()
 class L20260407_API UW_Main : public UUserWidget
@@ -21,6 +22,9 @@ class L20260407_API UW_Main : public UUserWidget
 	
 public:
 	virtual void NativeConstruct() override;
+
+	UFUNCTION(BlueprintCallable)
+	void RefreshItems();
 
 protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
@@ -41,6 +45,15 @@ protected:
 	UPROPERTY(BlueprintReadOnly, meta = (BindWidget))
 	UButton* BTN_Refresh;
 
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<UW_ItemButton> ItemButtonClass;
+
 	UFUNCTION()
 	void OnRefreshButtonClicked();
+
+	void ShuffleRowNames();
+	void AddRandomItem();
+
+	UFUNCTION()
+	void OnClickedItem(FName RowName);
 };
