@@ -27,7 +27,7 @@ protected:
 	void RefreshItems();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	UDataTable* DT_Item;
+	TObjectPtr<UDataTable> DT_Item;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TArray<FName> RowNames;
@@ -36,13 +36,13 @@ protected:
 	int32 RandomCnt;
 
 	UPROPERTY(BlueprintReadOnly, meta = (BindWidget))
-	UWrapBox* WrapBox;
+	TObjectPtr<UWrapBox> WrapBox;
 
 	UPROPERTY(BlueprintReadOnly, meta = (BindWidget))
-	UTextBlock* TXT_SelectLog;
+	TObjectPtr<UTextBlock> TXT_SelectLog;
 
 	UPROPERTY(BlueprintReadOnly, meta = (BindWidget))
-	UButton* BTN_Refresh;
+	TObjectPtr<UButton> BTN_Refresh;
 
 	UPROPERTY(EditDefaultsOnly)
 	TSubclassOf<UW_ItemButton> ItemButtonClass;

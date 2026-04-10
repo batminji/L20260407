@@ -25,5 +25,5 @@ protected:
 	TSubclassOf<UW_Main> MainWidgetClass;
 
 	UPROPERTY()
-	UW_Main* MainWidget;
+	TObjectPtr<UW_Main> MainWidget;
 };

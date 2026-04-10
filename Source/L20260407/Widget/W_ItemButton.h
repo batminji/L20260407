@@ -39,7 +39,7 @@ public:
 
 protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	UDataTable* DT_Item;
+	TObjectPtr<UDataTable> DT_Item;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FName RowName;
@@ -51,20 +51,20 @@ protected:
     void OnItemButtonClicked();
 
     UPROPERTY(BlueprintReadOnly, meta = (BindWidget))
-    UButton* BTN_Item;
+    TObjectPtr<UButton> BTN_Item;
 
     UPROPERTY(BlueprintReadOnly, meta = (BindWidget))
-    UImage* IMG_Icon;
+    TObjectPtr<UImage> IMG_Icon;
 
     UPROPERTY(BlueprintReadOnly, meta = (BindWidget))
-    UTextBlock* TXT_ItemName;
+    TObjectPtr<UTextBlock> TXT_ItemName;
 
     UPROPERTY(BlueprintReadOnly, meta = (BindWidget))
-    UTextBlock* TXT_Tier;
+    TObjectPtr<UTextBlock> TXT_Tier;
 
     UPROPERTY(BlueprintReadOnly, meta = (BindWidget))
-    UBorder* Tier_BG;
+    TObjectPtr<UBorder> Tier_BG;
 
     UPROPERTY(BlueprintReadOnly, meta = (BindWidget))
-    UTextBlock* TXT_Desc;
+    TObjectPtr<UTextBlock> TXT_Desc;
 };
